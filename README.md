@@ -1,6 +1,6 @@
 <h1>ExpNo 2 : Implement Depth First Search Traversal of a Graph</h1> 
-<h3>Name: Saravanan N</h3>
-<h3>Register Number/Staff Id: TSML006</h3>
+<h3>Name: Yuvan M</h3>
+<h3>Register Number: 212223240188</h3>
 <H3>Aim:</H3>
 <p> To Implement Depth First Search Traversal of a Graph using Python 3.</p>
 <h3>Theory:</h3>
@@ -53,6 +53,28 @@ Now, the Stack becomes empty, which means we have visited all the nodes, and our
  <li>Find its Successors Or neighbors and Check whether the node is visited or not</li>
  <li>If Not Visited, add it to the STACK. Else Call The Function Again Until No more nodes needs to be visited.</li>
 </ol></B>
+## Program:
+```
+from collections import defaultdict
+def dfs(graph,start,visited,path):
+    path.append(start)
+    visited[started]=True
+    for neighbour in graph[start]:
+        dfs(graph,neighbour,visited,path)
+        visited[neighbour]=True
+    return path
+graph=defaultdict(list)
+n,e=map(int,input () .split())
+for i in range(e):
+    u,v=map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+print(graph)
+start=input()
+visited=defaultdict(bool)
+path=[]
+traversedpath=dfs(graph,start,visited,path)
+```
 
 <hr>
 <h3>Sample Input</h3>
@@ -89,6 +111,9 @@ F H <BR>
 ['0', '1', '2', '3', '4']
 
 <hr>
+## Output:
+![image](https://github.com/Yuvan291205/19AI405ExpNo2/assets/138849170/96dd9ea5-8c9f-4740-983d-8a13409f34c7)
+
 <h3>Result:</h3>
 <hr>
 <p>Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.</p>
